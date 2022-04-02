@@ -4,6 +4,16 @@
       <h1><%= title %></h1>
       <p>Bienvenido a <%= title %> espero lo disfrutes</p>
     </div>
+    <p class="m-5">Buscar pelicula </p>
+    <form class="row g-2 m-5 p-5" action="/" method="post" >
+      <div class="col-auto">
+        <label for="nombre" class="visually">Buscar pelicula</label>
+        <input type="text" name="nombre"  id="nombre">
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary  mb-3">Buscar</button>
+      </div>
+    </form>
 
     
 <%- include layaout/footer.ejs %>   

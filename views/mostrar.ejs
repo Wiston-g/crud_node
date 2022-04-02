@@ -1,0 +1,17 @@
+<%- include layaout/header.ejs %>
+<h2><%-title %></h2>
+<div class="row">
+<h2>tu busqueda de <%-nombre %> es:</h2>
+<% for ( let pelicula = 0; pelicula < peliculas.length; pelicula++ ) { %>
+    <div class="card col-sm-12 m-2" style="width: 18rem;">
+      <img src="<%= peliculas[pelicula].image %>" class="card-img-top" alt="..." >
+      <div class="card-body">
+        <h5 class="card-title"><%= peliculas[pelicula].title %></h5>
+        <p class="card-text"><%= peliculas[pelicula].description %></p>
+      </div>
+    </div>
+  <% } %>
+</div>
+
+
+<%- include layaout/footer.ejs %>  
