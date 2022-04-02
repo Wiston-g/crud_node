@@ -1,0 +1,41 @@
+<%- include ../layaout/header.ejs %>
+
+
+<div class="card">
+    <h5 class="card-header bg-primary"><%= title %></h5>
+    <p class="card-text"><%= description %></p>
+    <div class="row">
+
+      <p>
+        <button class="btn btn-primary" type="button" >Lista libros</button>
+        <a href="/products/create"><button class="btn btn-primary" type="button" >Crear libros</button></a>
+      </p>
+          
+      <% for ( let libro = 0; libro < libroDB.length; libro++ ) { %>
+        <div class="card col-sm-12 m-2" style="width: 18rem;">
+          <img src="/images/<%= libroDB[libro].imagen %>" class="card-img-top" alt="..." >
+          <div class="card-body">
+            <h5 class="card-title"><%= libroDB[libro].titulo %></h5>
+            <p class="card-text"><%= libroDB[libro].descripcion %></p>
+            <a href="#" class="btn btn-primary">Comprar <%= libroDB[libro].price %></a>
+            
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button">
+              <form action="/products/edit/<%= libroDB[libro].id %>" method="post" class="form-inline">
+                <button type="submit" class="btn btn-success">Editar</button>
+              </form>
+            </div>
+
+            <div class="btn-group-vertical" role="group" aria-label="Vertical button">
+              <form action="/products/delete/<%= libroDB[libro].id %>" method="post" class="form-inline">
+                <button class="btn btn-danger">Borrar</button>
+              </form>
+            </div>
+            
+          </div>
+        </div>
+      <% } %>
+          
+    </div>
+</div>
+
+<%- include ../layaout/footer.ejs %>  

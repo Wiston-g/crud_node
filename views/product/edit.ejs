@@ -1,0 +1,39 @@
+<%- include ../layaout/header.ejs %>
+
+
+<div class="card">
+    <h5 class="card-header bg-primary"><%= title %></h5>
+    <p class="card-text"><%= description %></p>
+    <div class="row">
+
+        <form class="p-5 bg-dark text-light" action="../update" method="post" enctype="multipart/form-data">
+            <div class="mb-3">
+                <label for="id" class="form-label"></label>
+                <input type="hidden" value="<%= libro.id %>" name="id" class="form-control" id="id" >
+              </div>
+            <div class="mb-3">
+              <label for="titulo" class="form-label">Titulo:</label>
+              <input type="text" value="<%= libro.titulo %>" name="titulo" class="form-control" id="titulo" >
+            </div>
+            <div class="mb-3">
+              <label for="imagen" class="form-label">Imagen:</label>
+              <img src="/images/<%= libro.imagen %>" class="card-img-top" alt="..." >
+              <input type="file" name="imagen" class="form-control" id="imagen" >
+            </div>
+            <div class="mb-3">
+              <label for="descripcion" class="form-label">Descripcion:</label>
+              <input type="text" value="<%= libro.descripcion %>" name="descripcion" class="form-control" id="descripcion" >
+            </div>
+            <div class="mb-3">
+              <label for="price" class="form-label">Precio:</label>
+              <input type="number" value="<%= libro.price %>" name="price" class="form-control" id="price" >
+            </div>
+            
+            
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+
+    </div>
+</div>
+
+<%- include ../layaout/footer.ejs %>  
